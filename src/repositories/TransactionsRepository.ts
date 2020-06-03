@@ -16,10 +16,10 @@ class TransactionsRepository extends Repository<Transaction> {
       (accumulator: Balance, transaction) => {
         switch (transaction.type) {
           case 'income':
-            accumulator.income += transaction.value;
+            accumulator.income += +transaction.value;
             break;
           case 'outcome':
-            accumulator.outcome += transaction.value;
+            accumulator.outcome += +transaction.value;
             break;
           default:
             break;
